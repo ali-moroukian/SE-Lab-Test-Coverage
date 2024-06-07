@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > PersonService</title>
+  <title>Coverage Report > TrafficBehaviorService</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/highlight-idea.css";
@@ -20,14 +20,14 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">com.unittest.codecoverage.services</a>
 </div>
 
-<h1>Coverage Summary for Class: PersonService (com.unittest.codecoverage.services)</h1>
+<h1>Coverage Summary for Class: TrafficBehaviorService (com.unittest.codecoverage.services)</h1>
 
 <table class="coverageStats">
 <tr>
   <th class="name">Class</th>
 </tr>
 <tr>
-  <td class="name">PersonService</td>
+  <td class="name">TrafficBehaviorService</td>
 </tr>
 
 </table>
@@ -39,11 +39,14 @@ Current scope:     <a href="../../index.html">all classes</a>
 <pre>
 <div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.unittest.codecoverage.services;
 <i class="no-highlight">2</i>&nbsp;
-<i class="no-highlight">3</i>&nbsp;import com.unittest.codecoverage.models.Person;
-<i class="no-highlight">4</i>&nbsp;
-<i class="no-highlight">5</i>&nbsp;public interface PersonService extends CrudService&lt;Person, String&gt;{
-<i class="no-highlight">6</i>&nbsp;
-<i class="no-highlight">7</i>&nbsp;}
+<i class="no-highlight">3</i>&nbsp;import com.unittest.codecoverage.models.Footpassenger;
+<i class="no-highlight">4</i>&nbsp;import com.unittest.codecoverage.models.Traffic;
+<i class="no-highlight">5</i>&nbsp;
+<i class="no-highlight">6</i>&nbsp;public interface TrafficBehaviorService {
+<i class="no-highlight">7</i>&nbsp;	
+<i class="no-highlight">8</i>&nbsp;	public void footpassengerCrossTheStreet(Traffic currentTrafic, Footpassenger currentFootpassengerBehavior);
+<i class="no-highlight">9</i>&nbsp;	
+<i class="no-highlight">10</i>&nbsp;}
 </div>
 </pre>
 </div>
