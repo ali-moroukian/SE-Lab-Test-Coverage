@@ -1,4 +1,4 @@
-<project name="json-simple" default="main" basedir=".">	
+<project name="json-simple" default="main" basedir="..">
 	<path id="runtime.path">
 		<fileset dir="lib">
 			<include name="*.jar"/>
@@ -18,7 +18,7 @@
 	<target name="clean">
 		<delete includeemptydirs="true">
 		    <fileset dir="build/test" includes="**/*"/>
-			<fileset dir="." includes="TEST-*.txt"/>
+			<fileset dir=".." includes="TEST-*.txt"/>
 		 </delete>
 	</target>
 	
