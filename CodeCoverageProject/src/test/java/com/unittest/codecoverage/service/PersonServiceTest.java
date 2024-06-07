@@ -1,7 +1,9 @@
 package com.unittest.codecoverage.service;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 
 import java.util.List;
@@ -95,6 +97,29 @@ public class PersonServiceTest {
 			.isInstanceOf(PersonException.class)
 			.hasFieldOrPropertyWithValue("errors", expectedErrors)
 			.hasMessage(expectedMessage);
+	}
+
+	@Test
+	public void testUpdate_shouldUpdatePersonWithSuccessWhenAllPersonsInfoIsFilled() {
+		Person person = new Person();
+		person.setName("Name");
+		person.setAge(21);
+		person.setGender(Gender.M);
+
+		doNothing().when(repository).update(any(Person.class));
+
+		assertDoesNotThrow(() -> service.update(person));
+	}
+
+	@Test
+	public void testUpdate_shouldThrowPersonExceptionWhenPersonIsNull() {
+		List<String> expectedErrors = Lists.newArrayList("Name is required", "Gender is required");
+		String expectedMessage = String.join(";", expectedErrors);
+		Person person = null;
+
+		assertThatThrownBy(() -> service.update(person))
+				.isInstanceOf(PersonException.class)
+				.hasMessage(expectedMessage);
 	}
 
 }
